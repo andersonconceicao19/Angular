@@ -29,14 +29,42 @@
         <p> Ao Inves de trabalhar com propriedades, ela trabalha com css</p>
         <div>
             Selecione uma classe
-            <select>
-                <option value="alert alert-primary">Primary</option>
-                <option value="alert alert-success">Sucess</option>
-                <option value="alert alert-danger">Danger</option>
-                <option value="alert alert-warning">Info</option>
+            <select #Classe (change)="0">
+                <!--
+                    * É criada uma variavel local para acessar o combo do template
+                    é Declarado com o # na frente #Classe
+                -->
+                <option value="alert-primary">Primary</option>
+                <option value="alert-success">Sucess</option>
+                <option value="alert-danger">Danger</option>
+                <option value="alert-warning">Info</option>
             </select>
-            <div class="alert alert-primary" role="alert">...</div>
-            <div class="alert alert-success" role="alert">...</div>
+             <!--Usou o Property binding para acessar as propriedades
+                * No exemplo corrente acessou a class e o style para adicionar ou modificar 
+                    as propriedades conforme gostaria.
+                * Observar também que foi possivel usar expressões lógicas.
+            
+            -->
+            <div class="alert" role="alert"
+            [class.alert-primary]="Classe.value == 'alert-primary'"
+            [style.display]= "Classe.value == 'alert-primary' ? 'block' : 'none'">
+            Primary</div>
+           
+
+            <div class="alert " role="alert"
+            [class.alert-success]="Classe.value == 'alert-success'"
+            [style.display]= "Classe.value == 'alert-success' ? 'block' : 'none'">
+            success</div>
+
+            <div class="alert" role="alert"
+            [class.alert-danger]="Classe.value == 'alert-danger'"
+            [style.display]= "Classe.value == 'alert-danger' ? 'block' : 'none'"
+            >danger</div>
+
+            <div class="alert " role="alert"
+            [class.alert-warning]="Classe.value == 'alert-warning'"
+            [style.display]= "Classe.value == 'alert-warning' ? 'block' : 'none'"
+            >info</div>
         </div>
     </article>
 </section>
