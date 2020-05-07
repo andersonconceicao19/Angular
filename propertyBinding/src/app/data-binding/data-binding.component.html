@@ -1,0 +1,26 @@
+<section class="property-binding" >
+    <article>
+        <h3>Interpolação</h3>
+        <p>A url é {{ url }}</p>
+        <!-- 
+            * Usa as chaves duplas para referenciar que ali contem uma informação vindo do component
+            * Notar que o nome tem de ser exatamente igual declarado no component.            
+        -->
+
+        <p>Sendo usanda para expressão matematica 1+1 = {{ 1 + 1 }}</p>
+        <p> Dentro do component, caso haja um método que deseja chamar, <br>é só chama-lo dentro das duplas chaves</p>
+        <p> Consegue tambem colocar expressão lógicas dentro das interpolações</p>
+       
+        <img src="{{ urlImagem }}" />       
+        <hr>
+    </article>
+
+    <article>
+        <h3>Property Binding</h3>
+        <img [src]="urlImagem">
+        <!-- Notar a diferença no Property Binding
+            * Usa-se o [] dentro do proprio elemento html e chama o valor que deseja do componente
+            *         
+        -->
+    </article>
+</section>
