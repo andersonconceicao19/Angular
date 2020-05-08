@@ -19,7 +19,31 @@ export class DataBindingComponent implements OnInit {
    */
   constructor() { }
 
+  mudarCor: boolean = false;
+  valor: number;
   ngOnInit(): void {
   }
 
+  meclick(){
+    alert("Me clicou")
+  }
+
+  onkeyup(event : KeyboardEvent)  /**Tipando a variavel através do type*/
+  {
+    console.log((<HTMLInputElement>event.target).value); 
+    /** Da um erro se usar "event.target.value". 
+     * O event.target é do tipo HTML INPUT ELEMENT
+     * Observe a sintaxe
+    */ 
+  }
+  salvarValor(event)
+  {
+    console.log("Enter >> " + event);
+    this.valor = event;
+  }
+
+  mouseover(){
+  this.mudarCor = !this.mudarCor;
+    ;
+  }
 }

@@ -24,27 +24,26 @@
         ->
     </article> -->
 
-    <article>
+   <!-- <article>
         <h3>Class e Style Binding</h3>
         <p> Ao Inves de trabalhar com propriedades, ela trabalha com css</p>
         <div>
             Selecione uma classe
             <select #Classe (change)="0">
-                <!--
+                <!-
                     * É criada uma variavel local para acessar o combo do template
                     é Declarado com o # na frente #Classe
-                -->
+                ->
                 <option value="alert-primary">Primary</option>
                 <option value="alert-success">Sucess</option>
                 <option value="alert-danger">Danger</option>
                 <option value="alert-warning">Info</option>
             </select>
-             <!--Usou o Property binding para acessar as propriedades
+             <!-Usou o Property binding para acessar as propriedades
                 * No exemplo corrente acessou a class e o style para adicionar ou modificar 
                     as propriedades conforme gostaria.
-                * Observar também que foi possivel usar expressões lógicas.
-            
-            -->
+                * Observar também que foi possivel usar expressões lógicas.            
+            ->
             <div class="alert" role="alert"
             [class.alert-primary]="Classe.value == 'alert-primary'"
             [style.display]= "Classe.value == 'alert-primary' ? 'block' : 'none'">
@@ -65,6 +64,27 @@
             [class.alert-warning]="Classe.value == 'alert-warning'"
             [style.display]= "Classe.value == 'alert-warning' ? 'block' : 'none'"
             >info</div>
+        </div>
+    </article>-->
+    <article class="event-binding">
+        <h3>Event Binding</h3>
+         <!-- * Para passar parametro pelo evento, é necessário usar o $ 
+              * Usar o Target.value se quiser passar direto o valor da variavel  -->
+
+        <div>
+            <button class="btn btn-primary" (click) = "meclick()" >  Me Click</button>
+            <!--Chamando a função através do clique-->
+            <br>
+            <input type="text" 
+            (keyup) = "onkeyup($event)"
+            (keyup.enter) = "salvarValor($event.target.value)"
+            >
+           
+            <p (mouseover) = "mouseover()"
+                (mouseout) = "mouseover()"
+                [class.mudarbackground] = "mudarCor"
+            >O valor salvo é: {{ valor }}</p>
+            
         </div>
     </article>
 </section>
