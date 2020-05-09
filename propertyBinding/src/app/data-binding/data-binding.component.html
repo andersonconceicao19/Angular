@@ -66,14 +66,14 @@
             >info</div>
         </div>
     </article>-->
-    <article class="event-binding">
+   <!-- <article class="event-binding">
         <h3>Event Binding</h3>
-         <!-- * Para passar parametro pelo evento, é necessário usar o $ 
-              * Usar o Target.value se quiser passar direto o valor da variavel  -->
+         <!- * Para passar parametro pelo evento, é necessário usar o $ 
+              * Usar o Target.value se quiser passar direto o valor da variavel -> 
 
         <div>
             <button class="btn btn-primary" (click) = "meclick()" >  Me Click</button>
-            <!--Chamando a função através do clique-->
+            <!-Chamando a função através do clique->
             <br>
             <input type="text" 
             (keyup) = "onkeyup($event)"
@@ -86,5 +86,17 @@
             >O valor salvo é: {{ valor }}</p>
             
         </div>
+    </article>-->
+    <article>
+        <h3>Input/Output property </h3>
+        <!--
+            * Input property é passado paramentro do elemento PAI para o elemento FILHO
+            * É preciso usar o decorator Input() na variavel que vai receber o valor. 
+                * Se a var que for receber o valor for diferente da utilizada no emento filho, referencia assim Input('name') ....
+            <app-input-property [nome]='nomeAleatorio'></app-input-property>
+        -->
+
     </article>
+
+    
 </section>

@@ -16,7 +16,10 @@ export class DataBindingComponent implements OnInit {
 
   /** Aula Class e Style Binding
    * 
+   * >> da aula de Input  nomeAleatorio: string = "five oh five"
    */
+
+  
   constructor() { }
 
   mudarCor: boolean = false;
