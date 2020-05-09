@@ -95,6 +95,14 @@
                 * Se a var que for receber o valor for diferente da utilizada no emento filho, referencia assim Input('name') ....
             <app-input-property [nome]='nomeAleatorio'></app-input-property>
         -->
+        <contador valorinicial="10"         
+        (valorAtualizado)="onMudouvalor($event)"        
+        ></contador>
+        <!--
+            * uso de evento personalizado para pegar a alteraçãod o valor no elemento filho.. 
+            * 
+
+        -->
 
     </article>
 

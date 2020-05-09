@@ -47,6 +47,10 @@ export class DataBindingComponent implements OnInit {
 
   mouseover(){
   this.mudarCor = !this.mudarCor;
-    ;
+    
+  }
+  onMudouvalor(event)
+  {
+    console.log(event.novovalor);    
   }
 }
