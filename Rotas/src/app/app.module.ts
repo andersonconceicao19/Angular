@@ -1,25 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MaterializeModule } from "angular2-materialize";
+//import { MaterializeModule } from "angular2-materialize";
 
 
 
 import { AppComponent } from './app.component';
-import { AlunosComponent } from './alunos/alunos.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { routing } from './app.routing';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AlunosComponent,
     CursosComponent,
     LoginComponent,
+    HomeComponent,
    
   ],
   imports: [
     BrowserModule,
-    MaterializeModule
+    routing
+    //MaterializeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
