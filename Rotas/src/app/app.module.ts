@@ -10,6 +10,8 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { routing } from './app.routing';
 import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
+import {CursoService} from './cursos/curso.service';
+import { NaoEncontradoComponent } from './nao-encontrado/nao-encontrado.component'
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
     LoginComponent,
     HomeComponent,
     CursoDetalheComponent,
+    NaoEncontradoComponent,
    
   ],
   imports: [
@@ -25,7 +28,7 @@ import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
     routing
     //MaterializeModule
   ],
-  providers: [],
+  providers: [CursoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
