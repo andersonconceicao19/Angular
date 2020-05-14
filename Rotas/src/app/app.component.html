@@ -6,14 +6,18 @@
             <a routerLink="cursos">Cursos</a>
         </li>
         <li routerLinkActive="active">
+            <a [routerLink]="['curso', IdCurso.value]">Curso Detalhe</a> 
+            <!--Passando o parametro captado no input utilizando property binding-->
+        </li>
+        <li routerLinkActive="active">
             <a routerLink="login">Login</a>
         </li>
       </ul>
     </div>
   </nav>
 <div class="container">
-    <router-outlet>
-
-    </router-outlet> <!--Tag é fundamental para funcionar as rotas-->    
+    <p>Obter ID</p>
+    <input #IdCurso >
+    <router-outlet></router-outlet> <!--Tag é fundamental para funcionar as rotas-->    
 </div>
 

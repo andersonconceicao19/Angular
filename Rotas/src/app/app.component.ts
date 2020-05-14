@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styles: []
 })
 export class AppComponent {
-  title = 'Rotas';
+ 
+  
+  constructor() {
+    
+  }
+
+  ngOnInit() {
+    
+  }
 }
