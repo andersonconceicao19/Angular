@@ -1,6 +1,8 @@
-# Angular-Course
-  Este repositório inicialmente é apenas para colocar projetos criados durante meus estudos. Contudo, Futuramente será dividido em 2 partes
-    1 - Pasta contendo os codigos das funcionalidades o qual aprendi.
-    2 - Projetos o qual desenvolverei no decorrer da vida...
-    
+					#ANGULAR 2+ 
+ 
+	Para melhor organizar o repositório, decidi dividir ele em duas partes.
+		1 - LearnAngular2+ => Aborda meus estudos das funcionalidades individual do framework. Dessa forma preparando minha base para avançar.
+		2 - As demais pastas com projetos => Nestas constam projetos após me achar preparado para desenvolver com o frame. 
+	
+	
   
