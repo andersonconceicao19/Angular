@@ -1,20 +1,22 @@
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './header/header.component';
+
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { FooterComponent } from './footer/footer.component';
-import { NavComponent } from './nav/nav.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './views/home/home.component'
 import { MatCardModule } from '@angular/material/card';
 import { ProductCrudComponent } from './views/product-crud/product-crud.component';
 import { RoutingModule } from './app-routing.module';
-
+import { ProductCreateComponent } from './component/product/product-create/product-create.component';
+import { HeaderComponent } from './component/template/header/header.component';
+import { FooterComponent } from './component/template/footer/footer.component';
+import { NavComponent } from './component/template/nav/nav.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { RoutingModule } from './app-routing.module';
     FooterComponent,
     NavComponent,
     HomeComponent,
-    ProductCrudComponent
+    ProductCrudComponent,
+    ProductCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,9 @@ import { RoutingModule } from './app-routing.module';
     MatSidenavModule,
     MatListModule,
     MatCardModule,
-    RoutingModule
+    RoutingModule,
+    MatButtonModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
