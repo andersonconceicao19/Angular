@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -8,7 +9,11 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { FooterComponent } from './footer/footer.component';
 import { NavComponent } from './nav/nav.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list'
+import { MatListModule } from '@angular/material/list';
+import { HomeComponent } from './views/home/home.component'
+import { MatCardModule } from '@angular/material/card';
+import { ProductCrudComponent } from './views/product-crud/product-crud.component';
+import { RoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -16,14 +21,18 @@ import { MatListModule } from '@angular/material/list'
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    NavComponent
+    NavComponent,
+    HomeComponent,
+    ProductCrudComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatToolbarModule, 
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatCardModule,
+    RoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
