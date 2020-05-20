@@ -1,19 +1,9 @@
 {
   "Products": [
     {
-      "id": 1,
       "name": "Teclado",
-      "price": 42.5
-    },
-    {
-      "id": 2,
-      "name": "Mascara",
-      "price": 5
-    },
-    {
-      "id": 3,
-      "name": "Notebook",
-      "price": 2542.5
+      "price": "100",
+      "id": 1
     }
   ]
 }
