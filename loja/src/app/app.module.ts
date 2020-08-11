@@ -7,6 +7,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { TipoAndamentoDecisaoRepositoryComponent } from './tipo-andamento-decisao-repository/tipo-andamento-decisao-repository.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ContactComponent } from './pages/contact/contact.component';
     FooterComponent,
     HeaderComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    TipoAndamentoDecisaoRepositoryComponent
   ],
   imports: [
     BrowserModule,
