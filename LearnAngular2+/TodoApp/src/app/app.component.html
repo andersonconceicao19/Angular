@@ -1,0 +1,9 @@
+<h1>Olá Mundo</h1>
+
+<ul>
+  <li *ngFor="let todo of todos" >
+    {{ todo.Id}} - {{ todo.Done}}
+    <button *ngIf="!todo.Ativo" >Concluir</button>
+    <button (click)="Apagar(todo)">Remover</button>
+  </li>
+</ul>
