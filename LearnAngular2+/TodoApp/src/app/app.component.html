@@ -1,9 +1,25 @@
 <h1>Olá Mundo</h1>
 
+<form [formGroup]="form">
+  <fieldset>
+    <label> Tarefas </label>
+    <input
+    type="text"
+    formControlName="titulo"
+    >
+    <button [disabled]="form.invalid" (click)="Adicionar()">Salvar</button>
+    <br>
+    <small *ngIf="form.controls.titulo.invalid && !form.controls.titulo.pristine" > O texto precisa ter entre 3 e 60 caracter! </small>
+
+    <br>
+  </fieldset>
+</form>
+
 <ul>
   <li *ngFor="let todo of todos" >
     {{ todo.Id}} - {{ todo.Done}}
-    <button *ngIf="!todo.Ativo" >Concluir</button>
+    <button *ngIf="!todo.Ativo" (click)="Alterar(todo)" >Refazer</button>
+    <button *ngIf="todo.Ativo" (click)="Alterar(todo)" >Concluir</button>
     <button (click)="Apagar(todo)">Remover</button>
   </li>
 </ul>
