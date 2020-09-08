@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Petshop"
+    }
+  },
+  "defaultProject": "Petshop",
+  "cli": {
+    "analytics": "cee5f41d-55a7-4661-970d-10e8d1540f4e"
+  }
 }
