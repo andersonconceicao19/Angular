@@ -1,20 +1,21 @@
 <div class="uk-container">
   <div class="uk-grid uk-margin-small-top">
-    <div class="uk-width-1-2 uk-margin-small-bottom">
+    <div class="uk-width-1-2 uk-margin-small-bottom" *ngFor="let prod of product$ | async" >
 
       <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
         <div class="uk-card-media-left uk-cover-container">
-          <img src="https://picsum.photos/200" alt="" uk-cover >
+          <img src="{{ prod.images }}" alt="" uk-cover >
         </div>
         <div class="uk-card-body">
-          <h3 class="uk-card-title uk-margin-small-left">R$ 79.90</h3>
-          <p class="uk-margin-small-left"> Shampoo paa pelos macios</p>
+          <h3 class="uk-card-title uk-margin-small-left">{{ prod.price | currency:"BRL" }}</h3>
+          <p class="uk-margin-small-left"> {{ prod.title }}</p>
           <button class="uk-button uk-button-default uk-margin-small-left">
             <span class="uk-icon uk-margin-small-left" uk-icon="icon: cart" ></span>
             Adicionar
           </button>
         </div>
       </div>
+
     </div>
   </div>
 </div>
