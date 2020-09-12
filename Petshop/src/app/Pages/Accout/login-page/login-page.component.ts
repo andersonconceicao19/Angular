@@ -24,4 +24,17 @@ export class LoginPageComponent implements OnInit {
 
   }
 
+   submit()
+   {
+     this.services.autenticate(this.form.value).subscribe(
+       data => {
+         console.log(data);
+
+       },
+       error => {
+         console.log(error);
+
+       }
+     )
+   }
 }
