@@ -14,6 +14,7 @@ import { FramePageComponent } from './pages/master/frame-page/frame-page.compone
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './Services/data.service';
 import { ProductCardComponent } from './components/store/product-card/product-card.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -34,7 +35,8 @@ import { ProductCardComponent } from './components/store/product-card/product-ca
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     DataService
