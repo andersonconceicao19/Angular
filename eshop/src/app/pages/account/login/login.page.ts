@@ -51,7 +51,7 @@ export class LoginPage implements OnInit {
     this.dataService.authenticate(this.form.value).subscribe(
       (success) => {
         // a
-        this.navController.navigateRoot('/');
+        this.navController.navigateRoot('/home');
       },
       (error) => {
         this.showError('usuario invalido');
