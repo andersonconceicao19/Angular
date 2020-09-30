@@ -59,7 +59,15 @@ export class LoginPage implements OnInit {
       () => loading.dismiss()
     );
   }
-  onResetPassword() {}
+  async onResetPassword() {
+    if (this.form.controls[`username`].invalid)
+    {
+      this.showError('usuario invalido');
+      return;
+    }
+    const load = await this.loadingController.create({message: 'restaurando senha..', duration: 1000});
+    load.present();
+  }
 
   async showError(message: any) {
     const error = await this.toatsController.create({

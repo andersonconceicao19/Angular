@@ -1,13 +1,11 @@
 export class UserModel {
-    token: UserModel;
-    roles: any;
     constructor(
-        email: string,
-        image: string,
-        name: string,
-        roles: string[],
-        token: string,
-        username: string
+        public email: string,
+        public image: string,
+        public name: string,
+        public roles: string[],
+        public token: string,
+        public username: string
     ) {}
 
 // tslint:disable-next-line: eofline
