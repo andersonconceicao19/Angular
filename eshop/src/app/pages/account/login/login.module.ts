@@ -7,11 +7,13 @@ import { IonicModule } from '@ionic/angular';
 import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
+import { ComponentsModule } from '../../../components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+   // ComponentsModule,
     IonicModule,
     ReactiveFormsModule, // Fez import 30.09
     LoginPageRoutingModule
