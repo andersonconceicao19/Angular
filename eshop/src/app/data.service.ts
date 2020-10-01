@@ -13,6 +13,7 @@ constructor(private http: HttpClient) {}
 
     authenticate(data: any)
     {
+        console.log(data);
         return this.http.post(`${this.baseUrl}/v1/login`, data);
     }
 

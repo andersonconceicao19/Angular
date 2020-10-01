@@ -11,6 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentsModule } from './components/components.module';
 import { FrameComponent } from './pages/shared/frame/frame.component';
+import { AuthorizedGuard } from './guards/authorized.guard';
+import { ManagerGuard } from './guards/manager.guard';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { FrameComponent } from './pages/shared/frame/frame.component';
     ComponentsModule,
     IonicModule.forRoot()],
   providers: [
+    AuthorizedGuard,
+    ManagerGuard,
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

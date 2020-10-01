@@ -7,7 +7,9 @@ export class Security{
     }
     static get(): UserModel
     {
+
         const data = localStorage.getItem('shop.data');
+        console.log(`${data} dados` );
         if (data)
         {
             return JSON.parse(atob(data));
