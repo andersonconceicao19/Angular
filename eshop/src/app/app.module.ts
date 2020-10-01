@@ -10,9 +10,13 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentsModule } from './components/components.module';
+import { FrameComponent } from './pages/shared/frame/frame.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    FrameComponent
+  ],
   entryComponents: [],
   imports: [BrowserModule,
     HttpClientModule,

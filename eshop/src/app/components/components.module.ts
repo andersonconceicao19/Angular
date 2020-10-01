@@ -1,3 +1,5 @@
+import { UserCardComponent } from './user-card/user-card.component';
+import { NavbarComponent } from './navbar/navbar.component';
 import { MonthlySalesChartComponent } from './monthly-sales-chart/monthly-sales-chart.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -9,7 +11,9 @@ import { LoadingComponent } from './loading/loading.component';
 @NgModule({
   declarations: [
     LoadingComponent,
-    MonthlySalesChartComponent
+    MonthlySalesChartComponent,
+    NavbarComponent,
+    UserCardComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +21,9 @@ import { LoadingComponent } from './loading/loading.component';
   ],
   exports: [
     LoadingComponent,
-    MonthlySalesChartComponent
+    MonthlySalesChartComponent,
+    NavbarComponent,
+    UserCardComponent
   ]
 })
 export class ComponentsModule { }

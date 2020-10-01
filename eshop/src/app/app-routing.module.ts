@@ -1,19 +1,20 @@
+import { ManagerGuard } from './guards/manager.guard';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthorizedGuard } from './guards/authorized.guard';
+import { FrameComponent } from './pages/shared/frame/frame.component';
 
 const routes: Routes = [
-  {
-    path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
-  },
+  {path: 'login', loadChildren: './pages/account/login/login-routing.module' },
   {
     path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
-  {
-    path: 'login',
-    loadChildren: () => import('./pages/account/login/login.module').then( m => m.LoginPageModule)
+    component: FrameComponent,
+    canActivate: [AuthorizedGuard, ManagerGuard],
+    children: [
+      { path: '', loadChildren: './pages/home/home.module#HomePageModule' },
+      { path: 'orders', loadChildren: './pages/store/orders/orders.module#OrdersPageModule' },
+      { path: 'orders/:number', loadChildren: './pages/store/order-details/order-details.module#OrderDetailsPageModule' },
+    ]
   },
 ];
 
