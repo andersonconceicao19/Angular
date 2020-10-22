@@ -12,7 +12,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 1, nome: 'Hydrogen', date: new Date('2020-10-12')},
   {position: 2, nome: 'Helium', date: new Date('2020-11-19')},
   {position: 3, nome: 'Lithium', date: new Date('2020-10-12')},
-  {position: 4, nome: 'boron', date: new Date('2020-10-12')},
+  {position: 4, nome: 'boron', date: new Date('2020-10-11')},
   {position: 5, nome: 'Boron', date: new Date('2020-10-12')},
   {position: 6, nome: 'Carbon', date: new Date('2020-10-12')},
   {position: 7, nome: 'Nitrogen', date: new Date('2020-10-12')},
@@ -47,31 +47,45 @@ export class HomeComponent implements OnInit {
     return (row: PeriodicElement, filters: string ) => {
 
       const filterRow = filters.split('$');
-      const position = filters[0];
-      const nome = filters[1];
-      const dataSee = filters[2];
+      const position = filterRow[0];
+      const nome = filterRow[1];
+      const dataSee = filterRow[2];
 
       const columnPosition = row.position
       const columnDate = row.date
-      const column = row.nome 
+      const column = row.nome
       
+      const filterPosition = columnPosition.toString().toLowerCase().includes(position); //
+      const filterDate = columnDate.toDateString().toLowerCase().includes(dataSee); //
+      const filterName = column.toLowerCase().includes(nome); //
       
+      const matchFilter = []
       
-      
-
-
-      return true;
+      matchFilter.push(filterPosition)
+      matchFilter.push(filterDate)
+      matchFilter.push(filterName)
+      return matchFilter.every(Boolean);
     }
   }
 
   onSee() {
-    let aux = '';
-    for (let item of this.listFilter) {
-      
-      aux =  aux + this.form.controls[item].value + '$';
-    }    
-    let aux1 = aux.length;
-    this.dataSource.filter = aux.substring(0, aux1 - 1).trim().toLowerCase();
+    const date = this.form.controls['position'].value;
+    const as = this.form.controls['nome'].value;
+    const ds = this.form.controls['dateSee'].value;
+
+    console.log(date);
+    console.log(as);
+    console.log(ds);
+    
+
+    let departureDate = (date === null || date === '') ? '' : date;
+    let arrivalStation = as === null ? '' : as;
+    let departureStation = ds === null ? '' : ds;
+
+    // create string of our searching values and split if by '$'
+    const filterValue = departureDate + '$' + departureStation + '$' + arrivalStation;
+
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
   applyFilter(event: Event) {
