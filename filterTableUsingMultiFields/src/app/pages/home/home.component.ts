@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import {MatTableDataSource} from '@angular/material/table';
 
 export interface PeriodicElement {
@@ -9,16 +9,16 @@ export interface PeriodicElement {
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, nome: 'Hydrogen', date: new Date('2020-10-12')},
-  {position: 2, nome: 'Helium', date: new Date('2020-11-19')},
-  {position: 3, nome: 'Lithium', date: new Date('2020-10-12')},
-  {position: 4, nome: 'boron', date: new Date('2020-10-11')},
-  {position: 5, nome: 'Boron', date: new Date('2020-10-12')},
-  {position: 6, nome: 'Carbon', date: new Date('2020-10-12')},
-  {position: 7, nome: 'Nitrogen', date: new Date('2020-10-12')},
-  {position: 8, nome: 'Oxygen', date: new Date('2020-10-12')},
-  {position: 9, nome: 'Fluorine', date: new Date('2020-10-12')},
-  {position: 10, nome: 'Neon', date: new Date('2020-10-12')},
+  {position: 1, nome: 'Hydrogen', date: new Date('10-24-2020')},
+  {position: 2, nome: 'Helium', date: new Date('10-11-2020')},
+  {position: 3, nome: 'Lithium', date: new Date('10-11-2020')},
+  {position: 4, nome: 'boron', date: new Date('10-11-2020')},
+  {position: 5, nome: 'Boron', date: new Date('10-11-2020')},
+  {position: 6, nome: 'Carbon', date: new Date('10-11-2020')},
+  {position: 7, nome: 'Nitrogen', date: new Date('10-11-2020')},
+  {position: 8, nome: 'Oxygen', date: new Date('10-11-2020')},
+  {position: 9, nome: 'Fluorine', date: new Date('10-11-2020')},
+  {position: 10, nome: 'Neon', date: new Date('10-11-2020')},
 ];
 
 @Component({
@@ -32,10 +32,10 @@ export class HomeComponent implements OnInit {
   listFilter = ['position', 'nome', 'dateSee' ]
   constructor(private fb: FormBuilder) {}
   ngOnInit(): void {
-    this.form = this.fb.group({
-      position: [''],
-      nome: [''],
-      dateSee: ['']
+    this.form = new FormGroup({
+      position: new FormControl('' ),
+      nome: new FormControl(''),
+      dateSee: new FormControl('')
     });
 
     this.dataSource.filterPredicate = this.getPredicate();
@@ -50,13 +50,15 @@ export class HomeComponent implements OnInit {
       const position = filterRow[0];
       const nome = filterRow[1];
       const dataSee = filterRow[2];
-
-      const columnPosition = row.position
-      const columnDate = row.date
-      const column = row.nome
       
+     
+      let columnPosition = row.position
+      let columnDate = row.date
+      let column = row.nome
+
+       // OBSERVAR OS TIPOS DE DADOS QUE ESTÃO SENDO COMPARADOS. SE COMPARAR UM DATE COM UM A STRING, VAI DA FALSE
       const filterPosition = columnPosition.toString().toLowerCase().includes(position); //
-      const filterDate = columnDate.toDateString().toLowerCase().includes(dataSee); //
+      const filterDate = columnDate.toString().toLowerCase().includes(dataSee); //
       const filterName = column.toLowerCase().includes(nome); //
       
       const matchFilter = []
@@ -67,24 +69,27 @@ export class HomeComponent implements OnInit {
       return matchFilter.every(Boolean);
     }
   }
+  public dateSee = '';
+  public posicaoS = '';
+  public nomes = ''
 
   onSee() {
-    const date = this.form.controls['position'].value;
-    const as = this.form.controls['nome'].value;
-    const ds = this.form.controls['dateSee'].value;
+    const pos = this.form.get('position').value;
+    const nm = this.form.get('nome').value;
+    const ds = this.form.get('dateSee').value;
 
-    console.log(date);
-    console.log(as);
     console.log(ds);
     
 
-    let departureDate = (date === null || date === '') ? '' : date;
-    let arrivalStation = as === null ? '' : as;
-    let departureStation = ds === null ? '' : ds;
+     this.dateSee = (ds === null || ds === '') ? '' : ds;
+    this.nomes = nm === null ? '' : nm;
+    this.posicaoS = pos === null ? '' : pos;
 
     // create string of our searching values and split if by '$'
-    const filterValue = departureDate + '$' + departureStation + '$' + arrivalStation;
+    const filterValue = this.posicaoS + '$' + this.nomes + '$' + this.dateSee;
 
+    console.log(filterValue);
+    
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
