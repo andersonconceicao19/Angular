@@ -1,8 +1,10 @@
-					#ANGULAR 2+ 
- 
-	Para melhor organizar o repositório, decidi dividir ele em duas partes.
-		1 - LearnAngular2+ => Aborda meus estudos das funcionalidades individual do framework. Dessa forma preparando minha base para avançar.
-		2 - As demais pastas com projetos => Nestas constam projetos após me achar preparado para desenvolver com o frame. 
-	
+# ANGULAR 2+ 
+
+Repositório desenvolvido com fins estudantil. 
+
+- É utilizado para testar funcionalidades do framework Angular
+- Implemetar projetos simples, com a finalidade de evoluir em outro escopo.
+
+
 	
   
