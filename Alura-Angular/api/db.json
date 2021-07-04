@@ -6,7 +6,21 @@
       "id": 3
     }
   ],
-  "animais": [
-
+  "animais": [],
+  "user": [
+    {
+      "username": "anderson.adm",
+      "password": "4rsys@@",
+      "email": "blabla@anderson",
+      "nome": "anderson",
+      "id": 1
+    },
+    {
+      "username": "anderson.adm",
+      "email": "asa22@aa",
+      "nome": "12312",
+      "password": "4sys@@",
+      "id": 2
+    }
   ]
 }

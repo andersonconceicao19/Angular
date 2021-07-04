@@ -1,3 +1,5 @@
+import { HomeService } from './home.service';
+import { NovoUsuarioComponent } from './novo-usuario/novo-usuario.component';
 import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -14,7 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     HomeComponent,
     LoginComponent,
-
+    NovoUsuarioComponent
   ],
   imports: [
     CommonModule,
@@ -22,6 +24,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SharedModule,
     FormsModule,
     ReactiveFormsModule
+  ],
+  providers: [
+    HomeService
   ]
 })
 export class HomeModule { }

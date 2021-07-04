@@ -10,6 +10,11 @@ const routes: Routes = [
   {
     path: 'animais',
     loadChildren: () => import('./animais/animais.module').then(m => m.AnimaisModule)
+  },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
   }
 ];
 
