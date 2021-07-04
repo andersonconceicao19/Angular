@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
 
       if(x.length == 0){
        // add any thing.
+      this.form.valid
       }else{
         this.router.navigate(['animais'])
       }
